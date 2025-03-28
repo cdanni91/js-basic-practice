@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Practice</title>
+</head>
+
+<body>
+
+    <script>
+
+        function inputNumber () {
+
+            let yourNumber = parseInt(prompt("Hello !" ,"Please enter a number: "))
+
+            /* console.log (yourNumber); */
+
+            /* alert(yourNumber) */
+
+            return (
+
+                yourNumber
+
+            );
+        }
+
+        function printRangeOfNumbers(yourNumber) {
+            for (let i = 1; i <= yourNumber; i++) {
+                if (i % 3 === 0 && i % 5 === 0) {
+                console.log("FizzBuzz");
+                } else if (i % 3 === 0) {
+                console.log("Fizz");
+                } else if (i % 5 === 0) {
+                console.log("Buzz");
+                } else {
+                console.log(i);
+
+                }
+            }
+        }
+
+        /* Execution */
+
+        let yourNumber = inputNumber();
+
+        printRangeOfNumbers (yourNumber);
+
+
+    </script>
+
+
+</body>
+
+</html>
