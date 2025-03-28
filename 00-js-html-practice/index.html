@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Practice</title>
+
+</head>
+
+<body>
+
+
+
+<script>
+
+    yourNumber = 7;
+
+    function add7 (yourNumber) {
+
+        let newNumberAdded = yourNumber + 7;
+
+        console.log(`The result of adding these numbers is ${newNumberAdded}`);
+
+        return newNumberAdded;
+    };
+
+    add7 ( yourNumber );
+
+</script>
+
+<script>
+
+    let firstNumber = 5;
+    let secondNumber = 10;
+
+    function multiply (firstNumber, secondNumber) {
+
+        newNumberMultiplied = firstNumber * secondNumber;
+
+        console.log ((`The result of this product is: ${newNumberMultiplied}`));
+
+        return newNumberMultiplied;
+
+    };
+
+    multiply (2, 2);
+
+</script>
+
+
+<script>
+
+    yourString = "this is MY test string";
+
+    function capitalize (yourString) {
+
+        if (typeof(yourString) === "string") {
+            console.log (`Tu string es: ${yourString}. Espera mientras hacemos magia...`);
+            yourStringLowerCase = yourString.toLowerCase();
+
+            console.log (`Tu string en minuscula es: ${yourStringLowerCase}`);
+
+            let firstCharacter = yourStringLowerCase.charAt(0);
+
+            firstCharacter = firstCharacter.toUpperCase();
+
+           /*  console.log(firstCharacter); */
+
+            modifiedString = firstCharacter + yourStringLowerCase.slice(1);
+
+            console.log (`Tu string modificado es: ${modifiedString}, de nada`);
+
+        } else {
+            console.log ("No es un string");
+            
+        }
+    };
+
+    capitalize("Hola hola HOLA");
+
+
+
+</script>
+
+<script>
+
+    let yourString = "this is another StRiNg";
+
+    function lastLetter (yourString) {
+
+        if (typeof(yourString) === "string") {
+
+            console.log ("Hola")
+
+            yourStringLastLetter = yourString.slice(-1) ;
+
+            console.log (yourStringLastLetter);
+
+
+        } else {
+
+            console.log ("Not a string")
+
+        }
+        
+    
+
+    };
+
+    lastLetter(yourString);
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+</html>
