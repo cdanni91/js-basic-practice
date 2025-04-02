@@ -67,7 +67,15 @@ function getHumanChoice () {
 
 let humanScore = 0, computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+
+    let humanChoice = '';
+    let computerChoice = '';
+
+    humanChoice = getHumanChoice();
+    computerChoice = getComputerChoice();
+
+
     // Same answer (tie)
     if (humanChoice === computerChoice) {
         console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}, it's a tie!`);
@@ -108,22 +116,27 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame () {
 
-    playRound(humanChoice, computerChoice);
-    playRound(humanChoice, computerChoice);
-    playRound(humanChoice, computerChoice);
-    playRound(humanChoice, computerChoice);
-    playRound(humanChoice, computerChoice);
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+    if (humanScore > computerScore) {
+        console.log ("Humanity wins!");
+    } else if (computerScore > humanScore) {
+        console.log ("Welcome our new overlords, the machines!")
+    } else if (humanScore === computerScore) {
+        console.log ("It's a tie !")
+    };
 
     return (
-        console.log(" Okay lets go ")
+        console.log(" Game finished ")
     );
 }
 
 
 
-computerChoice = getComputerChoice();
-humanChoice = getHumanChoice();
-playRound(humanChoice, computerChoice);
+playGame();
 
-console.log (humanScore, computerScore);
 
