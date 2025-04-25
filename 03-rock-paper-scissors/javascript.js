@@ -63,9 +63,18 @@ function getHumanChoice () {
 }
 
 
+/* Refactor UI */
+
+let humanScore = 0, computerScore = 0, gameRounds = 0;
+let message = "";
 
 
-let humanScore = 0, computerScore = 0;
+let scoreContainer = document.querySelector(".score");
+let scoreElement = document.createElement("h1");
+scoreContainer.appendChild(scoreElement);
+scoreElement.textContent = humanScore + " " + computerScore;
+
+
 
 function playRound() {
 
@@ -109,12 +118,37 @@ function playRound() {
     
     console.log(humanScore, computerScore);
 
+    /* Refactor UI */
+    scoreElement.textContent = humanScore + " " + computerScore;
 
     
+    gameRounds += 1;
+
+    console.log(gameRounds);
+
+    evaluateScore(gameRounds);
+
     return;
+
 }
 
-function playGame () {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* function playGame () {
 
     playRound();
     playRound();
@@ -134,7 +168,7 @@ function playGame () {
         console.log(" Game finished ")
     );
 }
-
+ */
 
 
 /* playGame(); */
@@ -143,6 +177,7 @@ function playGame () {
 
 
 /* Refactor UI */
+
 
 let humanChoice = "";
 
@@ -180,3 +215,39 @@ scissorSelectionButton.addEventListener("click", () => {
 playButtonsContainerElement.appendChild(rockSelectionButton);
 playButtonsContainerElement.appendChild(paperSelectionButton);
 playButtonsContainerElement.appendChild(scissorSelectionButton);
+
+let messageContainer = document.querySelector(".message");
+let messageElement = document.createElement("h1")
+messageElement.style.color = "red";
+messageElement.textContent = message;
+messageContainer.appendChild(messageElement);
+
+
+function evaluateScore() {
+    if (gameRounds === 5) {
+  
+      if (humanScore > computerScore) {
+        console.log("Humanity wins!");
+        message = "Humanity wins!";
+      } else if (computerScore > humanScore) {
+        console.log("Welcome our new overlords, the machines!");
+        message = "Welcome our new overlords, the machines!";
+      } else {
+        console.log("It's a tie !");
+        message = "It's a tie !";
+      }
+  
+      // **Actualizar el DOM** con el mensaje
+      messageElement.textContent = message;
+  
+      console.log("Game finished");
+  
+      // Reset de puntuaciones y rondas
+      humanScore = 0;
+      computerScore = 0;
+      gameRounds = 0;
+  
+      console.log("Scores and rounds have been reset.");
+    }
+  }
+
