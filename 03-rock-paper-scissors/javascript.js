@@ -69,10 +69,10 @@ let humanScore = 0, computerScore = 0;
 
 function playRound() {
 
-    let humanChoice = '';
+    /* let humanChoice = ''; */
     let computerChoice = '';
 
-    humanChoice = getHumanChoice();
+    /* humanChoice = getHumanChoice(); */
     computerChoice = getComputerChoice();
 
 
@@ -137,6 +137,46 @@ function playGame () {
 
 
 
-playGame();
+/* playGame(); */
 
 
+
+
+/* Refactor UI */
+
+let humanChoice = "";
+
+let playButtonsContainerElement = document.querySelector(".play-buttons-container");
+let rockSelectionButton = document.createElement("button");
+rockSelectionButton.textContent = ("ROCK");
+let paperSelectionButton = document.createElement("button");
+paperSelectionButton.textContent = ("PAPER");
+let scissorSelectionButton = document.createElement("button");
+scissorSelectionButton.textContent = ("SCISSOR");
+
+
+
+rockSelectionButton.addEventListener("click", () => {
+                                    humanChoice = "rock",
+                                    console.log(humanChoice),
+                                    playRound();
+
+});
+paperSelectionButton.addEventListener("click", () => {
+    humanChoice = "paper",
+    console.log(humanChoice),
+    playRound();
+
+});
+scissorSelectionButton.addEventListener("click", () => {
+    humanChoice = "scissor",
+    console.log(humanChoice),
+    playRound();
+
+});
+
+
+
+playButtonsContainerElement.appendChild(rockSelectionButton);
+playButtonsContainerElement.appendChild(paperSelectionButton);
+playButtonsContainerElement.appendChild(scissorSelectionButton);
