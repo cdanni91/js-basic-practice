@@ -32,6 +32,63 @@
 
     <script>
 
+        const ulElement = document.querySelector("ul");
+        let inputElement = document.querySelector("input");
+        const buttonElement = document.querySelector("button");
+
+
+        
+
+
+        function clickAddItem() {
+
+            function removeListItem(){
+                newListItemElement.remove();
+            };
+
+
+            const newItemValue = inputElement.value;
+
+            /* alert(`Agregaste: ${newItemValue}`); */
+
+            inputElement.value = "";
+
+            /* alert(`Ahora es: ${inputElement.value}`); */
+
+            const newListItemElement = document.createElement("li");
+            const newSpanElement = document.createElement("span");
+            const newButtonElement = document.createElement("button");
+
+            newListItemElement.appendChild(newSpanElement);
+            newListItemElement.appendChild(newButtonElement);
+
+            newSpanElement.textContent = `${newItemValue}`;
+            newButtonElement.textContent = "Delete";
+
+            ulElement.appendChild(newListItemElement);
+
+            /* 
+
+                ## Otra forma con la arrow function
+
+                newButtonElement.addEventListener("click", ()=> {
+
+                newListItemElement.remove();
+
+            }); */
+
+            newButtonElement.addEventListener("click", removeListItem)
+
+            inputElement.focus();
+
+            };
+
+        buttonElement.addEventListener("click", clickAddItem);
+
+        
+
+
+
     </script>
   </body>
 </html>
